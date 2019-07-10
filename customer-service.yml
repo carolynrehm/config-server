@@ -17,3 +17,10 @@ eureka:
 feign:
   hystrix:
     enabled: true
+    
+## exposing actuator endpoint if not already mapped 
+management:
+  endpoints:
+    web:
+      exposure:
+        include: hystrix.stream
