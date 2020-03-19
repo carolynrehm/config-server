@@ -1,26 +1,21 @@
 server:
-  port: 2445
-
+  port: 2444
+  
 spring:
   application:
     name: customer-service
-
+    
+    
 eureka:
-  client:
-    fetch-registry: true
-    service-url:
-      defaultZone: http://18.205.185.8:8761/eureka/
   instance:
-    lease-renewal-interval-in-seconds: 1
-    lease-expiration-duration-in-seconds: 2
-
+    lease-renewal-interval-in-seconds: 2
+    
 feign:
   hystrix:
     enabled: true
     
-## exposing actuator endpoint if not already mapped 
 management:
   endpoints:
     web:
       exposure:
-        include: hystrix.stream
+        include: hystrix.stream    
